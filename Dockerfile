@@ -1,4 +1,4 @@
-FROM golang:1.17.5-alpine3.15 as builder
+FROM golang:1.18.4-alpine3.15 as builder
 ADD . /go/ping_exporter/
 WORKDIR /go/ping_exporter
 RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-s -w" -a -installsuffix cgo -o /go/bin/ping_exporter
